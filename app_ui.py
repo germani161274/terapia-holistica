@@ -3,7 +3,7 @@ import streamlit as st
 import requests
 from datetime import date, datetime
 
-API_BASE = os.getenv("API_BASE", "http://localhost:8000/api/pacientes")
+API_BASE = os.getenv("API_BASE", "https://terapia-holistica-1.onrender.com/api/pacientes")
 
 st.set_page_config(
     page_title="Terapia Holística",
