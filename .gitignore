@@ -1,0 +1,10 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.db
+.pytest_cache/
+pacientes.db
+test_todos.db
+screenshot_streamlit.png

@@ -1,0 +1,51 @@
+----- Prompt 1 -----
+
+Quiero construir una API REST de lista de tareas (to-do list) con
+estas especificaciones:
+
+Tecnología: Python 3.12 + FastAPI + uvicorn
+Base de datos: SQLite con sqlite3 estándar (sin ORM)
+
+Endpoints:
+- GET    /api/todos       → Lista todas las tareas (soporta ?status=pending|done)
+- GET    /api/todos/{id}  → Detalle de una tarea
+- POST   /api/todos       → Crear tarea (body: {title: str, description: str | None})
+- PATCH  /api/todos/{id}  → Actualizar tarea (cambiar título, descripción o status)
+- DELETE /api/todos/{id}  → Eliminar tarea
+
+Requisitos:
+- Modelos Pydantic para validación de inputs
+- Manejo centralizado de errores con HTTPException
+- Tests con pytest y httpx (TestClient de FastAPI), al menos 1 test por endpoint
+- Script de desarrollo: uvicorn src.main:app --reload
+
+Estructura de archivos:
+- src/main.py (app FastAPI y endpoints)
+- src/database.py (conexión SQLite e init de tablas)
+- src/models.py (modelos Pydantic)
+- tests/test_todos.py
+- requirements.txt
+
+Crea un entorno virtual específico del proyecto donde se instalen las dependencias. Después de crear todo, ejecuta los tests para verificar.
+
+
+----- Prompt 2 -----
+
+Ahora crea un archivo app_ui.py con una interfaz Streamlit que
+sirva como panel de control visual para la API de tareas:
+
+- Muestra la lista de tareas en una tabla con colores por estado
+  (verde para "done", naranja para "pending")
+- Formulario para crear nueva tarea (título + descripción)
+- Botón para marcar como completada junto a cada tarea
+- Botón para eliminar junto a cada tarea
+- Contador de tareas: total, pendientes y completadas
+- La interfaz debe comunicarse con la API FastAPI vía requests
+
+Primero arranca la API en segundo plano:
+  uvicorn src.main:app --port 8000 &
+
+Después arranca Streamlit:
+  streamlit run app_ui.py --server.port 8501
+
+Asegúrate de añadir streamlit y requests a requirements.txt.
