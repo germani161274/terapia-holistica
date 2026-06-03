@@ -6,7 +6,7 @@ from datetime import date, datetime
 API_BASE = os.getenv("API_BASE", "https://terapia-holistica-1.onrender.com/api/pacientes")
 
 st.set_page_config(
-    page_title="Terapia Holística",
+    page_title="Verónica Reynoso - Insightdelser",
     page_icon="🌿",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -148,7 +148,7 @@ def fmt_date(value):
 
 # ── título ───────────────────────────────────────────────────────────────────
 
-st.markdown("# 🌿 Terapia Holística")
+st.markdown("# 🌿 Verónica Reynoso - Insightdelser")
 st.markdown("##### Gestión de Pacientes")
 st.divider()
 
